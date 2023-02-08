@@ -52,9 +52,9 @@ void Task0(void *pvParameters)
 	 *                     local variable                         *
 	 ***************************************************************/
 
-	/*store the left led state ,it its on if the two consequcitive read is equal INDICATOR_ACTIVATION*/
+	/*store the left led state ,it its on if the two sequential read is equal INDICATOR_ACTIVATION*/
 	uint8 left_flag = LOGIC_LOW;
-	/*store the right led state, it its on if the two consequcitive read is equal INDICATOR_ACTIVATION*/
+	/*store the right led state, it its on if the two sequential read is equal INDICATOR_ACTIVATION*/
 	uint8 right_flag = LOGIC_LOW;
 	/*array to store the past read and present read of button to do some condition */
 	uint8 btn_ingit_state[NUM_OF_STATE] = {LOGIC_HIGH , LOGIC_HIGH};
@@ -125,7 +125,7 @@ void Task0(void *pvParameters)
 
 
 
-		/*check if the to consequse read is not active in both button left and right*/
+		/*check if the two sequential read is not active in both button left and right*/
 		 if( (right_flag == LOGIC_LOW)   &&    ( left_flag == LOGIC_LOW) &&  (hazard_isPressed == LOGIC_LOW))
 		{
 			 /* if the condition is true set the idle flag to enable task1 */
